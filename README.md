@@ -21,7 +21,7 @@
 > Fue creado en 2011 por Taylor Otwell y tiene una gran influencia de frameworks como Ruby on Rails, Sinatra y ASP.NET MVC.  
 > Gran parte de Laravel está formado por dependencias, especialmente de Symfony, esto implica que el desarrollo de Laravel dependa también del desarrollo de sus dependencias.
 
-> ¿Porqué Elegir Laravel?
+>> ¿Porqué Elegir Laravel?
 - [ ] Desarrollo más rápido
 - [ ] Menos escritura de código
 - [ ] Bibliotecas para tareas comunes
@@ -36,21 +36,21 @@
 
 1. un terminal
 - [ ] la del sistema operativo
-- [ ] cmDer https://cmder.net/
-- [ ] Cygwin https://www.cygwin.com/
-- [ ] Git Bash https://git-scm.com/
+- [ ] cmDer <https://cmder.net/>
+- [ ] Cygwin <https://www.cygwin.com/>
+- [ ] Git Bash <https://git-scm.com/>
 
 2. Composer
    Composer es un administrador de dependencias en PHP.  
-   https://getcomposer.org/  
-   https://getcomposer.org/Composer-Setup.exe
+   <https://getcomposer.org/>  
+   <https://getcomposer.org/Composer-Setup.exe>
 
 ## Recursos
 
-Manual Oficial de Laravel https://laravel.com/  
-Laravel News https://laravel-news.com/  
-Laracasts https://laracasts.com/  
-LaraJobs https://larajobs.com/
+Manual Oficial de Laravel <https://laravel.com/>  
+Laravel News <https://laravel-news.com/>  
+Laracasts <https://laracasts.com/>  
+LaraJobs <https://larajobs.com/>
 
 ## Instalación
 > Usando composer vamos a movernos al directorio de trabajo    
@@ -63,16 +63,17 @@ LaraJobs https://larajobs.com/
 > Ejemplo para instalar laravel 6x  
 `composer create-project laravel/laravel proyecto "6.*"`
 
-> Ejemplo para instalar laravel (versión más actual según tu versión de PHP)    
+> Ejemplo para instalar laravel (versión más actual según tu versión de PHP - no necesita especificar versión)    
 `composer create-project laravel/laravel proyecto`
 
-> Una vez instalado, nos movemos al directorio del proyecto
+> Una vez finalizada la instalación instalado, nos movemos al directorio del proyecto
 
 `cd proyecto`
 
 > Y ya podemos arrancar el server:
 
-> EL MARAVILLOSO MUNDO DE ARTISAN    
+> **EL MARAVILLOSO MUNDO DE ARTISAN**    
 > para iniciar al server es el comando
 
 `php artisan serve`
+
