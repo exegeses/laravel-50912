@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+# Route::get('peticion', acción );
+Route::get('saludo', function()
+{
+     return 'Hola Mundo desde Laravel!!';
+});
+Route::get('/prueba', function ()
+{
+    return view('primera');
+});
+Route::get('/segunda', function ()
+{
+    $nombre = 'marcos';
+    return view('segunda', [ 'nombre'=>$nombre ] );
+});
