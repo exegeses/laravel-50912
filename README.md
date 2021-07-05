@@ -3,7 +3,7 @@
 # Curso de Laravel código 50912
 
 > Curso de Laravel |  
-> Lunes y Miércoles 10hs a 13hs (Arg) |  
+> Lunes, Martes y Miércoles 10hs a 13hs (Arg) |  
 > Código: 50912 |  
 > sensei: Marcos Pinardi |
 
