@@ -31,3 +31,8 @@ Route::get('/segunda', function ()
     $nombre = 'marcos';
     return view('segunda', [ 'nombre'=>$nombre ] );
 });
+
+Route::get('/inicio', function ()
+{
+    return view('inicio');
+});
