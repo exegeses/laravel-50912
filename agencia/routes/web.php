@@ -44,3 +44,22 @@ Route::get('/adminRegiones', function () {
     $regiones = DB::select('SELECT regID, regNombre FROM regiones');
     return view('adminRegiones', [ 'regiones'=>$regiones ]);
 });
+Route::get('/agregarRegion', function ()
+{
+    return view('agregarRegion');
+});
+Route::post('/agregarRegion', function ()
+{
+    //capturamos dato enviados por el form
+    $regNombre = $_POST['regNombre'];
+    //insertamos en tabla regiones
+    DB::insert(
+                'INSERT INTO regiones
+                                    ( regNombre )
+                                VALUE
+                                    ( :regNombre )',
+                [ $regNombre ]
+        );
+    //redirección con mensaje ok
+    return redirect('/adminRegiones');
+});
