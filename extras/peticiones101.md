@@ -16,3 +16,12 @@
     Route::metodo( 'petición', acción );
 
 
+----
+## Circuito
+
+  1- Relizar una petición    
+        a través de un enlace <a href="/adminRegiones">Enlace</a>
+        pegando a una url /adminRegiones
+  2- La petición es recibida por el ENRUTADOR y según esta peticion, va a realizar una acción
+
+        Route::metodo( 'petición', acción );
