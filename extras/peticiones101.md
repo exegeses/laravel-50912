@@ -21,7 +21,10 @@
 
   1- Relizar una petición    
         a través de un enlace <a href="/adminRegiones">Enlace</a>
-        pegando a una url /adminRegiones
+        pegando a una url /adminRegiones    
   2- La petición es recibida por el ENRUTADOR y según esta peticion, va a realizar una acción
 
         Route::metodo( 'petición', acción );
+
+        Route::get('/agregarRegion', acción );
+        Route::get('/modificarRegion/{dato}', acción );

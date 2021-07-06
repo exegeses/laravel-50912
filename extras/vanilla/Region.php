@@ -17,6 +17,20 @@ class Region
         $regiones = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $regiones;
     }
+    public function verRegionPorID()
+    {
+        $id = $_POST['id'];
+        $link = Conexion::conectar();
+        $sql = "SELECT regID, regNombre
+                    FROM regiones
+                    WHERE id = :id";
+        $stmt = $link->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        $regiones = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $regiones;
+    }
 
     public function agregarRegion()
     {
