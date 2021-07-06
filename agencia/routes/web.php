@@ -79,3 +79,21 @@ Route::get('/modificarRegion/{id}', function($id)
     //retornamos vista del form con datos
     return view('modificarRegion', [ "region" => $region ]);
 });
+Route::put('/modificarRegion', function ()
+{
+    //capturamos datos
+    $regID = $_POST['regID'];
+    $regNombre = $_POST['regNombre'];
+    //modificamos
+    /* DB::update('UPDATE regiones
+                    SET regNombre = :regNombre
+                   WHERE regID = :regID',
+                [ $regNombre, $regID ]
+        );*/
+    DB::table('regiones')
+        ->where('regID', $regID)
+        ->update( ['regNombre'=>$regNombre]);
+    //redirección con mensaje ok
+    return redirect('/adminRegiones')
+        ->with( [ 'mensaje'=>'Región: '.$regNombre.' modificada correctamente' ] );
+});
