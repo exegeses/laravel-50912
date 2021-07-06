@@ -67,6 +67,10 @@
 
 	DB::table('nTabla')->get()
 	DB::table('nTabla')->select('campo, campo')->get()
+    
+    DB::table('nTabla)
+            ->join('nTabla2', 'nTabla.id', '=', 'nTabla2.id')
+            ->get()
 
 	DB::table('nTable')->insert(???)
 	DB::table('nTable')->where('condicion')->update(???)

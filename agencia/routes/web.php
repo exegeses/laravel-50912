@@ -103,8 +103,15 @@ Route::put('/modificarRegion', function ()
 Route::get('/adminDestinos', function ()
 {
     //obtenemos listado de destinos
+    /*
     $destinos = DB::select('SELECT *
-                                FROM destinos');
+                                FROM destinos
+                                INNER JOIN regiones
+                                  ON destinos.regID = regiones.regID');
+    */
+    $destinos = DB::table('destinos')
+                    ->join('regiones', 'destinos.regID', '=', 'regiones.regID')
+                    ->get();
     //retornamos vista con datos
     return view('adminDestinos',[ "destinos" => $destinos ]);
 });
