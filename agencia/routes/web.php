@@ -115,3 +115,7 @@ Route::get('/adminDestinos', function ()
     //retornamos vista con datos
     return view('adminDestinos',[ "destinos" => $destinos ]);
 });
+Route::get('/agregarDestino', function ()
+{
+    return view('agregarDestino');
+});
