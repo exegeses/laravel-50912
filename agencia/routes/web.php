@@ -117,5 +117,30 @@ Route::get('/adminDestinos', function ()
 });
 Route::get('/agregarDestino', function ()
 {
-    return view('agregarDestino');
+    //obtenemos listado de regiones
+    $regiones = DB::table('regiones')->get();
+    return view('agregarDestino', [ 'regiones'=>$regiones ]);
+});
+Route::post('/agregarDestino', function ()
+{
+    //capturar datos
+    $destNombre = $_POST['destNombre'];
+    $regID = $_POST['regID'];
+    $destPrecio = $_POST['destPrecio'];
+    $destAsientos = $_POST['destAsientos'];
+    $destDisponibles = $_POST['destDisponibles'];
+    //insertar datos en tabla
+    DB::table('regiones')
+                ->insert(
+                        [
+                            'destNombre'=>$destNombre,
+                            'regID'=>$regID,
+                            'destPrecio'=>$destPrecio,
+                            'destAsientos'=>$destAsientos,
+                            'destDisponibles'=>$destDisponibles
+                        ]
+                );
+    //redirección con mensaje ok
+    return redirect('/adminDestinos')
+                ->with(['mensaje'=>'Destino: '.$destNombre.' agregado correctamente.']);
 });
