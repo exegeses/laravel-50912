@@ -183,3 +183,13 @@ Route::put('/modificarDestino', function ()
     return redirect('/adminDestinos')
         ->with(['mensaje'=>'Destino: '.$destNombre.' modificado correctamente.']);
 });
+Route::get('/eliminarDestino/{id}', function ($id)
+{
+    //obtenemos datos de un destino por su id
+    $destino = DB::table('destinos as d')
+                    ->join('regiones as r', 'd.regID', '=', 'r.regID')
+                    ->where('destID', $id)
+                    ->first();
+    //retornamos la vista de confirmación
+    return view('eliminarDestino', [ 'destino'=>$destino ]);
+});
