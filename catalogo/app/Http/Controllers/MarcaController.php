@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Marca;
 use Illuminate\Http\Request;
 
 class MarcaController extends Controller
@@ -13,7 +14,11 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        //
+        //obtenemos listado de marcas
+        //DB::select('SELECT ... FROM ...')
+        //DB::table('marcas')->get()
+        $marcas = Marca::paginate(7);
+        return view('adminMarcas', [ 'marcas'=>$marcas ]);
     }
 
     /**
