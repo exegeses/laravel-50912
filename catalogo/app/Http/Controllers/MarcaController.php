@@ -51,8 +51,12 @@ class MarcaController extends Controller
                         ]
                     );
         //instanciar, asignar y guardar en BD
+        $Marca = new Marca;
+        $Marca->mkNombre = $mkNombre;
+        $Marca->save();
         //redirección con mensaje ok
-        return 'validación ok';
+        return redirect('/adminMarcas')
+            ->with( [ 'mensaje'=>'Marca: '.$mkNombre.' dada de alta' ] );
     }
 
     /**
