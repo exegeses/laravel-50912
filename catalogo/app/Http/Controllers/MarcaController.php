@@ -78,7 +78,11 @@ class MarcaController extends Controller
      */
     public function edit($id)
     {
-        //
+        //obtenemos datos de una marca
+        //DB::table('marcas')->where()->first()
+        $Marca = Marca::find($id);
+        //retornamos vista con datos de la marca
+        return view('modificarMarca', [ 'Marca'=>$Marca ]);
     }
 
     /**
