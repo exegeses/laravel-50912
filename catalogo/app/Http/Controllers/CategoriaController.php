@@ -27,7 +27,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('agregarCategoria');
     }
 
     /**
@@ -38,7 +38,21 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $catNombre = $request->catNombre;
+        $request->validate(
+                ['catNombre'=>'required|min:2|max:50'],
+                [
+                    'catNombre.required'=>'El campo "Nombre de la categoría" es obligatorio.',
+                    'catNombre.min'=>'El campo "Nombre de la categoría" debe contener al menos 2 caractéres.',
+                    'catNombre.max'=>'El campo "Nombre de la categoría" debe contener 50 caractéres como máximo.'
+                ]
+        );
+        $Categoria = new Categoria;
+        $Categoria->catNombre = $catNombre;
+        $Categoria->save();
+        return redirect('/adminCategorias')
+            ->with( [ 'mensaje'=>'Categoría: '.$catNombre.' agregada correctamente' ] );
+
     }
 
     /**

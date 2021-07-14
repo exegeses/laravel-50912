@@ -56,7 +56,7 @@ class MarcaController extends Controller
         $Marca->save();
         //redirección con mensaje ok
         return redirect('/adminMarcas')
-            ->with( [ 'mensaje'=>'Marca: '.$mkNombre.' dada de alta' ] );
+            ->with( [ 'mensaje'=>'Marca: '.$mkNombre.' agregada correctamente' ] );
     }
 
     /**
