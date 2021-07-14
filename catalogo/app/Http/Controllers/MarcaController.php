@@ -104,7 +104,16 @@ class MarcaController extends Controller
     public function update(Request $request)
     {
         $mkNombre = $request->mkNombre;
-
+        //validación
+        $this->validarForm($request);
+        //modificación
+        $idMarca = $request->idMarca;
+        $Marca = Marca::find($idMarca);
+        $Marca->mkNombre = $mkNombre;
+        $Marca->save();
+        //redirección con mensaje ok
+        return redirect('/adminMarcas')
+            ->with( [ 'mensaje'=>'Marca: '.$mkNombre.' modificada correctamente' ] );
     }
 
     /**
