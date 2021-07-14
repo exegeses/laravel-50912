@@ -31,6 +31,22 @@ class MarcaController extends Controller
         return view('agregarMarca');
     }
 
+
+    /**
+     * @param Request $request
+     */
+    private function validarForm(Request $request): void
+    {
+        $request->validate(
+            ['mkNombre' => 'required|min:2|max:50'],
+            [
+                'mkNombre.required' => 'El campo "Nombre de la marca" es obligatorio.',
+                'mkNombre.min' => 'El campo "Nombre de la marca" debe contener al menos 2 caractéres.',
+                'mkNombre.max' => 'El campo "Nombre de la marca" debe contener 50 caractéres como máximo.'
+            ]
+        );
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -42,14 +58,7 @@ class MarcaController extends Controller
         //capturamos dato enviado por el form
         $mkNombre = $request->mkNombre;
         //validación
-        $request->validate(
-                        [ 'mkNombre'=>'required|min:2|max:50' ],
-                        [
-                           'mkNombre.required'=>'El campo "Nombre de la marca" es obligatorio.',
-                           'mkNombre.min'=>'El campo "Nombre de la marca" debe contener al menos 2 caractéres.',
-                           'mkNombre.max'=>'El campo "Nombre de la marca" debe contener 50 caractéres como máximo.'
-                        ]
-                    );
+        $this->validarForm($request);
         //instanciar, asignar y guardar en BD
         $Marca = new Marca;
         $Marca->mkNombre = $mkNombre;
@@ -92,9 +101,10 @@ class MarcaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $mkNombre = $request->mkNombre;
+
     }
 
     /**
@@ -107,4 +117,5 @@ class MarcaController extends Controller
     {
         //
     }
+
 }
