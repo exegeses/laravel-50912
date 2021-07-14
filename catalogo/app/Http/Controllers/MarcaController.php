@@ -144,9 +144,16 @@ class MarcaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $idMarca = $request->idMarca;
+        /*
+         $Marca = Marca::find($idMarca);
+         $Marca->delete();
+        */
+        Marca::destroy($idMarca);
+        return redirect('/adminMarcas')
+            ->with( [ 'mensaje'=>'Marca: '.$request->mkNombre.' eliminada correctamente' ] );
     }
 
 }
