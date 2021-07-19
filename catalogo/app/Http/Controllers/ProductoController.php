@@ -14,7 +14,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('adminProductos');
+        $productos = Producto::with(['getMarca', 'getCategoria'])
+                                ->paginate(7);
+        return view('adminProductos', [ 'productos'=>$productos ]);
     }
 
     /**
