@@ -7,9 +7,9 @@
 > Laravel Breeze implementa una capa predeterminada de vistascompuesta por plantillas Blade utilizando los estilos de Tailwind CSS.   
 > Breeze provee un maravilloso punto de inicio para comenzar un nuevo proyecto Laravel.
 
-- [ ] Crear proyecto nuevo      
+- [ ] Crear proyecto nuevo  
 
-    composer create-project laravel/laravel login
+        composer create-project laravel/laravel login
 
 - [ ] Crear nueva base de datos
 
@@ -19,7 +19,7 @@
 
 - [ ] Correr las migraciones     
   
-      php artisan migrate    
+        php artisan migrate    
 
 - [ ] Descargamos Breeze usando composer    
 
@@ -35,7 +35,7 @@
 
 - [ ] Instalar TailwindCSS y algo de Javascript    
 
-       npm install
-       npm run dev
+        npm install
+        npm run dev
 
 > webpack compiled successfully
