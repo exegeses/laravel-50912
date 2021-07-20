@@ -183,6 +183,11 @@ class ProductoController extends Controller
             );
     }
 
+    public function confirmarBaja($id)
+    {
+        return view('eliminarProducto');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
