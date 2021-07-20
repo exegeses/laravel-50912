@@ -195,8 +195,14 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy(Request $request)
     {
-        //
+        $idProducto = $request->idProducto;
+        $prdNombre = $request->prdNombre;
+        Producto::destroy($idProducto);
+        return redirect('/adminProductos')
+            ->with(
+                [ 'mensaje'=>'Producto: '.$prdNombre.' eliminado correctamente.' ]
+            );
     }
 }
