@@ -175,6 +175,7 @@ class ProductoController extends Controller
         $Producto->prdPresentacion = $request->prdPresentacion;
         $Producto->prdStock = $request->prdStock;
         $Producto->prdImagen = $prdImagen;
+        $Producto->save();
         //redirección con mensaje ok
         return redirect('/adminProductos')
             ->with(
