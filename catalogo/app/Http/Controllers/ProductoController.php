@@ -185,7 +185,8 @@ class ProductoController extends Controller
 
     public function confirmarBaja($id)
     {
-        return view('eliminarProducto');
+        $Producto = Producto::with(['getMarca', 'getCategoria'])->find($id);
+        return view('eliminarProducto', [ 'Producto'=>$Producto ]);
     }
 
     /**
