@@ -1,4 +1,9 @@
-# Laravel Breeze
+# Laravel Breeze  
+
+> Laravel Breeze es un kit de inicio minimalista, para uns sencillísima implementacion de las características de autenticación de Laravel.   
+> Incluye un sistema de login, un sistema de registro, uno de reseteo de contraseña, verificación de email y confirmación de contraseña. 
+> Laravel Breeze implementa una capa predeterminada de vistascompuesta por plantillas Blade utilizando los estilos de Tailwind CSS.   
+> Breeze provee un maravilloso punto de inicio para comenzar un nuevo proyecto Laravel.
 
 - [ ] Crear proyecto nuevo  
 
@@ -12,17 +17,18 @@
 
 - [ ] Correr las migraciones     
   
-      php artisan migrate  
+      php artisan migrate    
 
-- [ ] Instalamos Breeze usando composer  
+- [ ] Instalamos Breeze usando composer    
 
-      composer require laravel/breeze --dev
+        composer require laravel/breeze --dev
 
-- [ ]  Instalamos breeze  
+- [ ]  Instalamos breeze    
 
-      php artisan breeze:install    
+        php artisan breeze:install    
 
-- [ ] Instalar TailwindCSS y algo de Javascript  
+- [ ] Instalar TailwindCSS y algo de Javascript    
 
-     npm install
-     npm run dev
+       npm install
+       npm run dev
+
