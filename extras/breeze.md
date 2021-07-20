@@ -1,3 +1,5 @@
+<img src="imagenes/breeze.png">
+
 # Laravel Breeze  
 
 > Laravel Breeze es un kit de inicio minimalista, para uns sencillísima implementacion de las características de autenticación de Laravel.   
