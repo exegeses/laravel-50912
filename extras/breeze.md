@@ -5,7 +5,7 @@
 > Laravel Breeze implementa una capa predeterminada de vistascompuesta por plantillas Blade utilizando los estilos de Tailwind CSS.   
 > Breeze provee un maravilloso punto de inicio para comenzar un nuevo proyecto Laravel.
 
-- [ ] Crear proyecto nuevo  
+- [ ] Crear proyecto nuevo      
 
     composer create-project laravel/laravel login
 
@@ -19,16 +19,21 @@
   
       php artisan migrate    
 
-- [ ] Instalamos Breeze usando composer    
+- [ ] Descargamos Breeze usando composer    
 
-        composer require laravel/breeze --dev
+        composer require laravel/breeze --dev  
+
+> Luego que composer termina de descargar el package de Laravel Breeze, debemos terminar su instalación
 
 - [ ]  Instalamos breeze    
 
         php artisan breeze:install    
+
+> Este comando genera las vistas de autenticación, las routes, los controllers, y otros recursos de la instalación
 
 - [ ] Instalar TailwindCSS y algo de Javascript    
 
        npm install
        npm run dev
 
+> webpack compiled successfully
