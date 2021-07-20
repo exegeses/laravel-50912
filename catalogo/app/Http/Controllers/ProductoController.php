@@ -73,8 +73,13 @@ class ProductoController extends Controller
 
     private function subirImagen(Request $request)
     {
-        //si no enviaron imagen
+        //si no enviaron imagen *store()
         $prdImagen = 'noDisponible.jpg';
+
+        //si no enviaron imagen *update()
+        if( $request->has('imgActual') ){
+            $prdImagen = $request->imgActual;
+        }
 
         //si enviaron imagen
         if( $request->file('prdImagen') ){

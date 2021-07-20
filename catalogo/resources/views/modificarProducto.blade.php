@@ -8,6 +8,7 @@
         <div class="alert bg-light border border-white shadow round col-8 mx-auto p-4">
 
             <form action="/modificarProducto" method="post" enctype="multipart/form-data">
+            @method('put')
             @csrf
                 Nombre: <br>
                 <input type="text" name="prdNombre"
@@ -48,13 +49,20 @@
                        value="{{ old('prdStock', $Producto->prdStock) }}"
                        class="form-control" min="0">
                 <br>
-                Imagen: <br>
+                Imagen actual: <br>
+                <img src="/productos/{{ $Producto->prdImagen }}" class="img-thumbnail mb-4">
+                <br>
+
+                Modificar imagen (opcional): <br>
 
                 <div class="custom-file mt-1 mb-4">
                     <input type="file" name="prdImagen"  class="custom-file-input" id="customFileLang" lang="es">
                     <label class="custom-file-label" for="customFileLang" data-browse="Buscar en disco">Seleccionar Archivo: </label>
                 </div>
-
+                <input type="hidden" name="imgActual"
+                       value="{{ $Producto->prdImagen }}">
+                <input type="hidden" name="idProducto"
+                       value="{{ $Producto->idProducto }}">
                 <br>
                 <button class="btn btn-dark mb-3">Modificar producto</button>
                 <a href="/adminProductos" class="btn btn-outline-secondary mb-3">Volver al panel de Productos</a>
