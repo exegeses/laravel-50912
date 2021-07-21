@@ -10,7 +10,25 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
 
-                    Listado de marcas
+                    <h3 class="border-b-2 border-indigo-400 mb-4 pb-2">Listado de marcas</h3>
+
+                    <table class="w-auto shadow">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Marca</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    @foreach( $marcas as $marca )
+                            <tr>
+                                <td>{{ $marca->idMarca }}</td>
+                                <td>{{ $marca->mkNombre }}</td>
+                            </tr>
+                    @endforeach
+                        </tbody>
+                    </table>
+
 
                 </div>
             </div>
