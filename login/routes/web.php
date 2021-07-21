@@ -27,4 +27,9 @@ use App\Http\Controllers\MarcaController;
 Route::get('adminMarcas', [ MarcaController::class, 'index' ])
                 ->middleware(['auth'])->name('adminMarcas');
 
+use App\Http\Controllers\CategoriaController;
+Route::get('adminCategorias', [ CategoriaController::class, 'index' ])
+                ->middleware(['auth'])->name('adminCategorias');
+
+
 require __DIR__.'/auth.php';
